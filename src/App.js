@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import UserProfile from "./UserProfile";
+import TrackEvent from "./TrackEvent";
+import initializeSuprsend from "./initializeSuprsend";
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    initializeSuprsend();
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>SuprSend User Profile and Event Tracking</h1>
+        <UserProfile />
+        <TrackEvent />
       </header>
     </div>
   );
-}
+};
 
 export default App;
